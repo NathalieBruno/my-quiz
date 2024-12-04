@@ -9,6 +9,21 @@
   }
 }
 
+header {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+
+  .dark-mode-toggle {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+}
+
 .container {
   min-height: 100vh;
   display: flex;
