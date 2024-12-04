@@ -86,4 +86,19 @@ header .dark-mode-toggle {
 
 .hidden {
   display: none;
+}
+
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0px;
+}
+
+.answer-btn {
+  background-color: palevioletred;
+  border: 15px solid #6979d1;
+}
+.answer-btn:hover {
+  background-color: rosybrown;
 }/*# sourceMappingURL=style.css.map */

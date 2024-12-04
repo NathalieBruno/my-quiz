@@ -25,3 +25,8 @@ startBtn.addEventListener("click", () => {
   document.querySelector(".main-container").style.display = "block";
   showQuestion(currentQuestionIndex);
 });
+
+const showQuestion = (questionIndex) => {
+  let questionText = document.querySelector(".question-text");
+  questionText.textContent = quizQuestions[questionIndex].question;
+};
