@@ -6,6 +6,10 @@
     min-height: 100vh;
     background-color: #f0f2f5;
     font-family: poppins, sans-serif;
+    &.dark-mode-toggle {
+      background-color: #2d3748;
+      color: white;
+    }
   }
 }
 
@@ -41,6 +45,9 @@ header {
   width: 100%;
   max-width: 600px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  &.dark-mode-toggle {
+    background-color: #565e6b;
+  }
 
   h1 {
     font-family: "londrina shadow", sans-serif;
