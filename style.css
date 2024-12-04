@@ -3,12 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-* body {
+
+body {
   min-height: 100vh;
   background-color: #f0f2f5;
   font-family: poppins, sans-serif;
 }
-* body.dark-mode-toggle {
+body.dark-mode {
   background-color: #2d3748;
   color: white;
 }
@@ -36,7 +37,8 @@ header .dark-mode-toggle {
   border: 30px solid #283e5f;
 }
 
-.start-page {
+.start-page,
+.main-container {
   text-align: center;
   background-color: rgb(244, 169, 83);
   border-radius: 10px;
@@ -45,10 +47,12 @@ header .dark-mode-toggle {
   max-width: 600px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
-.start-page.dark-mode-toggle {
+.dark-mode .start-page,
+.dark-mode .main-container {
   background-color: #565e6b;
 }
-.start-page h1 {
+.start-page h1,
+.main-container h1 {
   font-family: "londrina shadow", sans-serif;
   font-size: 48px;
   letter-spacing: 2px;
@@ -56,23 +60,30 @@ header .dark-mode-toggle {
   text-align: center;
   margin-bottom: 32px;
 }
-.start-page .intro-text {
+.start-page .intro-text,
+.main-container .intro-text {
   text-align: center;
   font-size: 16px;
-  color: rgb(25, 90, 90);
   margin-bottom: 30px;
 }
-.start-page .btn {
+.start-page .btn,
+.main-container .btn {
   border: none;
   border-radius: 6px;
   font-size: 18px;
   padding: 12px 20px;
 }
-.start-page .btn:hover {
+.start-page .btn:hover,
+.main-container .btn:hover {
   filter: brightness(1.2);
 }
-.start-page #start-btn {
+.start-page #start-btn,
+.main-container #start-btn {
   background-color: #6979d1;
   color: white;
   font-size: 16px;
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
