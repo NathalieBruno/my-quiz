@@ -29,4 +29,7 @@ startBtn.addEventListener("click", () => {
 const showQuestion = (questionIndex) => {
   let questionText = document.querySelector(".question-text");
   questionText.textContent = quizQuestions[questionIndex].question;
+
+  let answerContainer = document.querySelector(".answer-container");
+  answerContainer.innerHTML = "";
 };
