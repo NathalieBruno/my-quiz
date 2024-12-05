@@ -32,4 +32,11 @@ const showQuestion = (questionIndex) => {
 
   let answerContainer = document.querySelector(".answer-container");
   answerContainer.innerHTML = "";
+
+  quizQuestions[questionIndex].answers.forEach((answer) => {
+    let answerBtn = document.createElement("button");
+    answerBtn.classList.add("btn", "answer-btn");
+    answerBtn.textContent = answer.text;
+    answerContainer.appendChild(answerBtn);
+  });
 };
