@@ -89,6 +89,15 @@ header .dark-mode-toggle {
   display: none;
 }
 
+.result {
+  text-align: center;
+  margin: 30px 0px;
+}
+.result h2 {
+  font-size: 24px;
+  font-weight: light;
+}
+
 .btn {
   border: none;
   border-radius: 6px;

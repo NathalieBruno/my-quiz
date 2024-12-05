@@ -85,6 +85,15 @@ header {
 .hidden {
   display: none;
 }
+
+.result {
+  text-align: center;
+  margin: 30px 0px;
+  h2 {
+    font-size: 24px;
+    font-weight: light;
+  }
+}
 //Alla nästlade knappar
 .btn {
   border: none;

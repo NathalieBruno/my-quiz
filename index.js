@@ -30,6 +30,7 @@ let startBtn = document.querySelector("#start-btn");
 let nextBtn = document.querySelector(".next-btn");
 let quizSection = document.querySelector(".quiz-section");
 let resultBtn = document.querySelector(".result-btn");
+let resultSection = document.querySelector(".result");
 
 startBtn.addEventListener("click", () => {
   document.querySelector("#start-page").style.display = "none";
@@ -78,3 +79,11 @@ nextBtn.addEventListener("click", () => {
   currentQuestionIndex++;
   showQuestion(currentQuestionIndex);
 });
+
+const getQuizResult = (correctAnswers) => {
+  let totalScore = correctAnswers / quizQuestions.length;
+
+  if (totalScore < 0.5) return { text: "Du är underkänd.", color: "red" };
+  if (totalScore < 0.75) return { text: "Du är godkänd.", color: "orange" };
+  return { text: "Du är godkänd, riktigt bra jobbat!", color: "green" };
+};
