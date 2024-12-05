@@ -27,12 +27,16 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let startBtn = document.querySelector("#start-btn");
+let nextBtn = document.querySelector("#next-btn");
+let quizSection = document.querySelector(".quiz-section");
 
 startBtn.addEventListener("click", () => {
   document.querySelector("#start-page").style.display = "none";
   document.querySelector(".main-container").style.display = "block";
   showQuestion(currentQuestionIndex);
 });
+
+let userAnswers = new Array(quizQuestions.length).fill(null);
 
 const showQuestion = (questionIndex) => {
   let questionCounter = document.querySelector(".question-counter");
@@ -48,6 +52,15 @@ const showQuestion = (questionIndex) => {
     let answerBtn = document.createElement("button");
     answerBtn.classList.add("btn", "answer-btn");
     answerBtn.textContent = answer.text;
+    answerBtn.dataset.correct = answer.correct;
     answerContainer.appendChild(answerBtn);
   });
 };
+
+quizSection.addEventListener("click", (event) => {
+  if (event.target.classList.contains("answer-btn")) {
+    quizSection.querySelectorAll(".answer-btn").forEach((btn) => btn.classList.remove("selected"));
+    event.target.classList.add("selected");
+    userAnswers[currentQuestionIndex] = event.target.textContent;
+  }
+});

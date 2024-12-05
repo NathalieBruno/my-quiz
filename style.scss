@@ -106,8 +106,17 @@ header {
     &:hover {
       background-color: rosybrown;
     }
+    &.selected {
+      background-color: black;
+      color: white;
+    }
   }
-
+  &.btn-variants {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 34px;
+  }
   &.next-btn {
     background-color: rgb(78, 174, 193);
     color: white;

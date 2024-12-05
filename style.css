@@ -110,6 +110,16 @@ header .dark-mode-toggle {
 .btn.answer-btn:hover {
   background-color: rosybrown;
 }
+.btn.answer-btn.selected {
+  background-color: black;
+  color: white;
+}
+.btn.btn-variants {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 34px;
+}
 .btn.next-btn {
   background-color: rgb(78, 174, 193);
   color: white;
