@@ -87,3 +87,26 @@ const getQuizResult = (correctAnswers) => {
   if (totalScore < 0.75) return { text: "Du är godkänd.", color: "orange" };
   return { text: "Du är godkänd, riktigt bra jobbat!", color: "green" };
 };
+
+const showResult = () => {
+  let correctAnswers = 0;
+  for (let i = 0; i < quizQuestions.length; i++) {
+    let correctOption = quizQuestions[i].answers.find((option) => option.correct);
+    if (userAnswers[i] === correctOption.text) correctAnswers++;
+  }
+
+  let result = getQuizResult(correctAnswers);
+  let resultText = result.text;
+  let resultColor = result.color;
+
+  resultSection.innerHTML = `
+<p style="color:${resultColor}">
+Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
+</p>
+<p style="color:${resultColor}">${resultText}</p>
+`;
+};
+
+resultBtn.addEventListener("click", () => {
+  showResult();
+});

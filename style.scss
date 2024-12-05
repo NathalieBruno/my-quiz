@@ -34,13 +34,13 @@ header {
   justify-content: center;
   align-items: center;
   padding: 16px;
-  border: 30px solid #283e5f;
+  border: 40px dotted #d41a49;
 }
 
 .start-page,
 .main-container {
   text-align: center;
-  background-color: rgb(246, 181, 106);
+  background-color: rgb(120, 112, 230);
   border-radius: 10px;
   padding: 32px;
   width: 100%;
@@ -104,14 +104,14 @@ header {
     filter: brightness(1);
   }
   &#start-btn {
-    background-color: #6979d1;
+    background-color: #e17510;
     color: white;
     font-size: 16px;
   }
 
   &.answer-btn {
     background-color: palevioletred;
-    border: 5px solid #6979d1;
+    border: 5px solid #97e05a;
     &:hover {
       background-color: rosybrown;
     }
