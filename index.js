@@ -15,6 +15,14 @@ const quizQuestions = [
       { text: "gul", correct: true },
     ],
   },
+  {
+    question: "Vilken färg har månen?",
+    answers: [
+      { text: "grön", correct: false },
+      { text: "gul", correct: true },
+      { text: "lila", correct: false },
+    ],
+  },
 ];
 
 let currentQuestionIndex = 0;
@@ -27,6 +35,9 @@ startBtn.addEventListener("click", () => {
 });
 
 const showQuestion = (questionIndex) => {
+  let questionCounter = document.querySelector(".question-counter");
+  questionCounter.textContent = `Fråga ${questionIndex + 1} av ${quizQuestions.length}`;
+
   let questionText = document.querySelector(".question-text");
   questionText.textContent = quizQuestions[questionIndex].question;
 

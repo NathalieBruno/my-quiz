@@ -40,12 +40,23 @@ header .dark-mode-toggle {
 .start-page,
 .main-container {
   text-align: center;
-  background-color: rgb(244, 169, 83);
+  background-color: rgb(246, 181, 106);
   border-radius: 10px;
   padding: 32px;
   width: 100%;
   max-width: 600px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+.start-page .question-counter,
+.main-container .question-counter {
+  color: #524f4f;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+.dark-mode .start-page .question-counter,
+.dark-mode .main-container .question-counter {
+  color: #ccc;
 }
 .dark-mode .start-page,
 .dark-mode .main-container {
