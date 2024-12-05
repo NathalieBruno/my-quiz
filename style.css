@@ -77,27 +77,6 @@ header .dark-mode-toggle {
   font-size: 16px;
   margin-bottom: 30px;
 }
-.start-page .btn,
-.main-container .btn {
-  border: none;
-  border-radius: 6px;
-  font-size: 18px;
-  padding: 12px 20px;
-}
-.start-page .btn:hover,
-.main-container .btn:hover {
-  filter: brightness(1.2);
-}
-.start-page #start-btn,
-.main-container #start-btn {
-  background-color: #6979d1;
-  color: white;
-  font-size: 16px;
-}
-
-.hidden {
-  display: none;
-}
 
 .answer-container {
   display: flex;
@@ -106,10 +85,36 @@ header .dark-mode-toggle {
   margin: 32px 0px;
 }
 
-.answer-btn {
-  background-color: palevioletred;
-  border: 15px solid #6979d1;
+.hidden {
+  display: none;
 }
-.answer-btn:hover {
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 12px 20px;
+}
+.btn:hover {
+  filter: brightness(1);
+}
+.btn#start-btn {
+  background-color: #6979d1;
+  color: white;
+  font-size: 16px;
+}
+.btn.answer-btn {
+  background-color: palevioletred;
+  border: 5px solid #6979d1;
+}
+.btn.answer-btn:hover {
   background-color: rosybrown;
+}
+.btn.next-btn {
+  background-color: rgb(78, 174, 193);
+  color: white;
+  font-size: 16px;
+}
+.btn.next-btn:hover {
+  background-color: aquamarine;
 }/*# sourceMappingURL=style.css.map */

@@ -73,24 +73,6 @@ header {
     font-size: 16px;
     margin-bottom: 30px;
   }
-  .btn {
-    border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    padding: 12px 20px;
-    &:hover {
-      filter: brightness(1.2);
-    }
-  }
-  #start-btn {
-    background-color: #6979d1;
-    color: white;
-    font-size: 16px;
-  }
-}
-
-.hidden {
-  display: none;
 }
 
 .answer-container {
@@ -99,11 +81,39 @@ header {
   gap: 16px;
   margin: 32px 0px;
 }
-.answer-btn {
-  background-color: palevioletred;
-  border: 15px solid #6979d1;
 
+.hidden {
+  display: none;
+}
+//Alla nästlade knappar
+.btn {
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  padding: 12px 20px;
   &:hover {
-    background-color: rosybrown;
+    filter: brightness(1);
+  }
+  &#start-btn {
+    background-color: #6979d1;
+    color: white;
+    font-size: 16px;
+  }
+
+  &.answer-btn {
+    background-color: palevioletred;
+    border: 5px solid #6979d1;
+    &:hover {
+      background-color: rosybrown;
+    }
+  }
+
+  &.next-btn {
+    background-color: rgb(78, 174, 193);
+    color: white;
+    font-size: 16px;
+    &:hover {
+      background-color: aquamarine;
+    }
   }
 }
