@@ -125,4 +125,12 @@ header {
       background-color: aquamarine;
     }
   }
+  &.result-btn {
+    background-color: rgb(11, 87, 18);
+    color: white;
+    font-size: 16px;
+    &:hover {
+      background-color: aquamarine;
+    }
+  }
 }

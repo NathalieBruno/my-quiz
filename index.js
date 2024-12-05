@@ -27,8 +27,9 @@ const quizQuestions = [
 
 let currentQuestionIndex = 0;
 let startBtn = document.querySelector("#start-btn");
-let nextBtn = document.querySelector("#next-btn");
+let nextBtn = document.querySelector(".next-btn");
 let quizSection = document.querySelector(".quiz-section");
+let resultBtn = document.querySelector(".result-btn");
 
 startBtn.addEventListener("click", () => {
   document.querySelector("#start-page").style.display = "none";
@@ -55,6 +56,10 @@ const showQuestion = (questionIndex) => {
     answerBtn.dataset.correct = answer.correct;
     answerContainer.appendChild(answerBtn);
   });
+
+  let isLastQuestion = questionIndex === quizQuestions.length - 1;
+  nextBtn.classList.toggle("hidden", isLastQuestion);
+  resultBtn.classList.toggle("hidden", !isLastQuestion);
 };
 
 quizSection.addEventListener("click", (event) => {
@@ -63,4 +68,13 @@ quizSection.addEventListener("click", (event) => {
     event.target.classList.add("selected");
     userAnswers[currentQuestionIndex] = event.target.textContent;
   }
+});
+
+nextBtn.addEventListener("click", () => {
+  if (userAnswers[currentQuestionIndex] === null) {
+    alert("För att gå vidare behöver du först svara på frågan.");
+    return;
+  }
+  currentQuestionIndex++;
+  showQuestion(currentQuestionIndex);
 });
