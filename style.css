@@ -19,13 +19,18 @@ header {
   top: 25px;
   right: 25px;
 }
-header .dark-mode-toggle {
+
+.theme-toggle {
   padding: 8px 16px;
   background-color: #333;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+}
+.dark-mode .theme-toggle {
+  background-color: white;
+  color: black;
 }
 
 .container {
@@ -85,17 +90,19 @@ header .dark-mode-toggle {
   margin: 32px 0px;
 }
 
-.hidden {
-  display: none;
-}
-
 .result {
   text-align: center;
   margin: 30px 0px;
 }
 .result h2 {
+  color: #33f00d;
   font-size: 24px;
   font-weight: light;
+  margin: 20px 0px;
+}
+
+.hidden {
+  display: none;
 }
 
 .btn {

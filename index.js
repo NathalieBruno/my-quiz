@@ -1,4 +1,4 @@
-let darkMode = document.querySelector(".dark-mode-toggle");
+let darkMode = document.querySelector("#dark-mode");
 let darkModeToggle = document.querySelector("#dark-mode");
 
 darkMode.addEventListener("click", () => {
@@ -101,6 +101,7 @@ const showResult = () => {
   let resultColor = result.color;
 
   resultSection.innerHTML = `
+  <h2>Ditt resultat</h2>
 <p style="color:${resultColor}">
 Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 </p>
@@ -110,6 +111,7 @@ Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
   [quizSection, nextBtn, resultBtn].forEach((element) => {
     element.classList.add("hidden");
   });
+
   exitBtn.classList.remove("hidden");
 };
 
@@ -120,3 +122,17 @@ resultBtn.addEventListener("click", () => {
   }
   showResult();
 });
+
+const restartQuiz = () => {
+  nextBtn.classList.remove("hidden");
+  resultBtn.classList.remove("hidden");
+  exitBtn.classList.add("hidden");
+  resultSection.innerHTML = "";
+  currentQuestionIndex = 0;
+  userAnswers = new Array(quizQuestions.length).fill(null);
+  document.querySelector(".main-container").style.display = "none";
+  quizSection.classList.remove("hidden");
+
+  document.querySelector(".start-page").style.display = "block";
+};
+exitBtn.addEventListener("click", restartQuiz);

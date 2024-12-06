@@ -17,14 +17,18 @@ header {
   position: fixed;
   top: 25px;
   right: 25px;
+}
 
-  .dark-mode-toggle {
-    padding: 8px 16px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+.theme-toggle {
+  padding: 8px 16px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  .dark-mode & {
+    background-color: white;
+    color: black;
   }
 }
 
@@ -82,18 +86,21 @@ header {
   margin: 32px 0px;
 }
 
-.hidden {
-  display: none;
-}
-
 .result {
   text-align: center;
   margin: 30px 0px;
   h2 {
+    color: #33f00d;
     font-size: 24px;
     font-weight: light;
+    margin: 20px 0px;
   }
 }
+
+.hidden {
+  display: none;
+}
+
 //Alla nästlade knappar
 .btn {
   border: none;
