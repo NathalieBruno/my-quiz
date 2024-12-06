@@ -13,7 +13,7 @@ body {
   }
 }
 
-header {
+.page-header {
   position: fixed;
   top: 25px;
   right: 25px;
@@ -42,7 +42,7 @@ header {
 }
 
 .start-page,
-.main-container {
+.quiz-container {
   text-align: center;
   background-color: rgb(120, 112, 230);
   border-radius: 10px;

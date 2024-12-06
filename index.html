@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz</title>
+    <title>Quiz: Klarar du alla frågor?</title>
     <link rel="stylesheet" href="style.css" />
     <script src="index.js" defer></script>
     <link
@@ -11,35 +11,39 @@
       rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <button id="dark-mode" class="theme-toggle">Dark theme 😎</button>
+    <header class="page-header">
+      <nav>
+        <button id="dark-mode" class="theme-toggle" aria-label="Toggle to dark mode">Dark theme 😎</button>
+      </nav>
     </header>
 
-    <div class="container">
-      <section id="start-page" class="start-page">
+    <main class="container">
+      <article id="start-page" class="start-page">
         <h1>Quiz - Testa din kunskap</h1>
         <p class="intro-text">Testa dina kunskaper med en mix av olika frågor.</p>
         <button id="start-btn" class="btn">Starta Quiz</button>
-      </section>
+      </article>
 
-      <main class="main-container hidden">
+      <article class="quiz-container hidden">
         <section class="quiz-section">
           <div class="quiz-header">
-            <p class="question-counter"></p>
+            <p class="question-counter" aria-live="polite"></p>
             <p class="question-text">fråga 1</p>
           </div>
-          <div class="answer-container">
-            <button class="btn answer-btn">Knapp mall</button>
+          <div class="answer-container" role="group" aria-label="Svarsalternativ">
+            <button class="btn answer-btn"></button>
           </div>
         </section>
-        <section class="result"></section>
+        <section class="result hidden" aria-live="polite">
+          <h2>Ditt resultat</h2>
+        </section>
 
         <div class="btn-variants">
           <button class="btn next-btn">Nästa fråga</button>
           <button class="btn result-btn hidden">Visa resultat</button>
           <button class="btn exit-btn hidden">Avsluta quiz</button>
         </div>
-      </main>
-    </div>
+      </article>
+    </main>
   </body>
 </html>

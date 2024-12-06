@@ -1,11 +1,3 @@
-let darkMode = document.querySelector("#dark-mode");
-let darkModeToggle = document.querySelector("#dark-mode");
-
-darkMode.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light theme 🌞 " : "Dark theme 😎";
-});
-
 const quizQuestions = [
   {
     question: "Vilken färg har solen?",
@@ -32,10 +24,17 @@ let quizSection = document.querySelector(".quiz-section");
 let resultBtn = document.querySelector(".result-btn");
 let resultSection = document.querySelector(".result");
 let exitBtn = document.querySelector(".exit-btn");
+let darkMode = document.querySelector("#dark-mode");
+let darkModeToggle = document.querySelector("#dark-mode");
+
+darkMode.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light theme 🌞 " : "Dark theme 😎";
+});
 
 startBtn.addEventListener("click", () => {
   document.querySelector("#start-page").style.display = "none";
-  document.querySelector(".main-container").style.display = "block";
+  document.querySelector(".quiz-container").style.display = "block";
   showQuestion(currentQuestionIndex);
 });
 
@@ -97,21 +96,20 @@ const showResult = () => {
   }
 
   let result = getQuizResult(correctAnswers);
-  let resultText = result.text;
-  let resultColor = result.color;
 
   resultSection.innerHTML = `
   <h2>Ditt resultat</h2>
-<p style="color:${resultColor}">
+<p style="color:${result.color}">
 Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 </p>
-<p style="color:${resultColor}">${resultText}</p>
+<p style="color:${result.color}">${result.text}</p>
 `;
 
   [quizSection, nextBtn, resultBtn].forEach((element) => {
     element.classList.add("hidden");
   });
 
+  resultSection.classList.remove("hidden");
   exitBtn.classList.remove("hidden");
 };
 
@@ -128,9 +126,11 @@ const restartQuiz = () => {
   resultBtn.classList.remove("hidden");
   exitBtn.classList.add("hidden");
   resultSection.innerHTML = "";
+
   currentQuestionIndex = 0;
   userAnswers = new Array(quizQuestions.length).fill(null);
-  document.querySelector(".main-container").style.display = "none";
+
+  document.querySelector(".quiz-container").style.display = "none";
   quizSection.classList.remove("hidden");
 
   document.querySelector(".start-page").style.display = "block";

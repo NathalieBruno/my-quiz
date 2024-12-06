@@ -14,7 +14,7 @@ body.dark-mode {
   color: white;
 }
 
-header {
+.page-header {
   position: fixed;
   top: 25px;
   right: 25px;
@@ -43,7 +43,7 @@ header {
 }
 
 .start-page,
-.main-container {
+.quiz-container {
   text-align: center;
   background-color: rgb(120, 112, 230);
   border-radius: 10px;
@@ -53,22 +53,22 @@ header {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 .start-page .question-counter,
-.main-container .question-counter {
+.quiz-container .question-counter {
   color: #524f4f;
   font-size: 16px;
   font-weight: lighter;
   margin-bottom: 20px;
 }
 .dark-mode .start-page .question-counter,
-.dark-mode .main-container .question-counter {
+.dark-mode .quiz-container .question-counter {
   color: #ccc;
 }
 .dark-mode .start-page,
-.dark-mode .main-container {
+.dark-mode .quiz-container {
   background-color: #565e6b;
 }
 .start-page h1,
-.main-container h1 {
+.quiz-container h1 {
   font-family: "londrina shadow", sans-serif;
   font-size: 48px;
   letter-spacing: 2px;
@@ -77,7 +77,7 @@ header {
   margin-bottom: 32px;
 }
 .start-page .intro-text,
-.main-container .intro-text {
+.quiz-container .intro-text {
   text-align: center;
   font-size: 16px;
   margin-bottom: 30px;
