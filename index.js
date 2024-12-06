@@ -105,6 +105,10 @@ Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 </p>
 <p style="color:${resultColor}">${resultText}</p>
 `;
+
+  [quizSection, nextBtn, resultBtn].forEach((element) => {
+    element.classList.add("hidden");
+  });
 };
 
 resultBtn.addEventListener("click", () => {
