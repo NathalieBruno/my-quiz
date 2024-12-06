@@ -104,13 +104,13 @@ header .dark-mode-toggle {
   font-size: 18px;
   padding: 12px 20px;
 }
-.btn:hover {
-  filter: brightness(1);
-}
 .btn#start-btn {
   background-color: #e17510;
   color: white;
   font-size: 16px;
+}
+.btn#start-btn:hover {
+  background-color: rgb(159, 37, 37);
 }
 .btn.answer-btn {
   background-color: palevioletred;
@@ -144,4 +144,12 @@ header .dark-mode-toggle {
 }
 .btn.result-btn:hover {
   background-color: aquamarine;
+}
+.btn.exit-btn {
+  background-color: #e17510;
+  color: white;
+  font-size: 16px;
+}
+.btn:hover {
+  background-color: rgb(219, 89, 89);
 }/*# sourceMappingURL=style.css.map */

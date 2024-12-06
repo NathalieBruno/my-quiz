@@ -100,13 +100,16 @@ header {
   border-radius: 6px;
   font-size: 18px;
   padding: 12px 20px;
-  &:hover {
-    filter: brightness(1);
-  }
+  //   &:hover {
+  //     filter: brightness(1);
+  //   }
   &#start-btn {
     background-color: #e17510;
     color: white;
     font-size: 16px;
+    &:hover {
+      background-color: rgb(159, 37, 37);
+    }
   }
 
   &.answer-btn {
@@ -141,5 +144,13 @@ header {
     &:hover {
       background-color: aquamarine;
     }
+  }
+  &.exit-btn {
+    background-color: #e17510;
+    color: white;
+    font-size: 16px;
+  }
+  &:hover {
+    background-color: rgb(219, 89, 89);
   }
 }

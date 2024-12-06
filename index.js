@@ -31,6 +31,7 @@ let nextBtn = document.querySelector(".next-btn");
 let quizSection = document.querySelector(".quiz-section");
 let resultBtn = document.querySelector(".result-btn");
 let resultSection = document.querySelector(".result");
+let exitBtn = document.querySelector(".exit-btn");
 
 startBtn.addEventListener("click", () => {
   document.querySelector("#start-page").style.display = "none";
@@ -109,6 +110,7 @@ Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
   [quizSection, nextBtn, resultBtn].forEach((element) => {
     element.classList.add("hidden");
   });
+  exitBtn.classList.remove("hidden");
 };
 
 resultBtn.addEventListener("click", () => {
