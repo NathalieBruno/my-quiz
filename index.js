@@ -112,5 +112,9 @@ Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 };
 
 resultBtn.addEventListener("click", () => {
+  if (userAnswers[currentQuestionIndex] === null) {
+    alert("Du behöver välja ett svar för att kunna se ditt resultat. ");
+    return;
+  }
   showResult();
 });
