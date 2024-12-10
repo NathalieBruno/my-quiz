@@ -1,24 +1,88 @@
 const quizQuestions = [
   {
-    question: "Vilken färg har solen?",
+    question: "Vilken är den största staden i Australien, inte räknad som huvudstad?",
     answers: [
-      { text: "grön", correct: false },
-      { text: "lila", correct: false },
-      { text: "gul", correct: true },
+      { text: "Sydney", correct: true },
+      { text: "Melbourne", correct: false },
+      { text: "Brisbane", correct: false },
     ],
   },
   {
-    question: "Vilken färg har månen?",
+    question: "Vad heter den traditionella japanska teceremonin?",
     answers: [
-      { text: "grön", correct: false },
-      { text: "gul", correct: true },
-      { text: "lila", correct: false },
+      { text: "Sumi-e", correct: false },
+      { text: "Kintsugi", correct: false },
+      { text: "Chanoyu", correct: true },
     ],
   },
+  //   {
+  //     question: "Vilken planet i vårt solsystem är känd som den röda planeten?",
+  //     answers: [
+  //       { text: "Mars", correct: true },
+  //       { text: "Jupiter", correct: false },
+  //       { text: "Venus", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "Vilket land har världens största ö, Grönland?",
+  //     answers: [
+  //       { text: "Danmark", correct: true },
+  //       { text: "Island", correct: false },
+  //       { text: "Kanada", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "Vilken av dessa dansstilar är förknippad med Brasilien och dansas ofta under karnevalen?",
+  //     answers: [
+  //       { text: "Salsa", correct: false },
+  //       { text: "Samba", correct: true },
+  //       { text: "Bachata", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "I vilket land är det vanligt att dricka mate, ett örtte som serveras i en speciell behållare?",
+  //     answers: [
+  //       { text: "Argentina", correct: true },
+  //       { text: "Brasilien", correct: false },
+  //       { text: "Chile", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "Vilken stad kallas ofta för 'The Big Apple'? 🍎 ",
+  //     answers: [
+  //       { text: "Los Angeles", correct: false },
+  //       { text: "New York", correct: true },
+  //       { text: "Chicago", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "Vilket land är känt för att ha de mest unika köket i världen, med mat som kimchi och bibimbap?",
+  //     answers: [
+  //       { text: "Japan", correct: false },
+  //       { text: "Sydkorea", correct: true },
+  //       { text: "Kina", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "I vilket land hittar man den Machu Picchu, en världsberömd inka-stad i Anderna?",
+  //     answers: [
+  //       { text: "Peru", correct: true },
+  //       { text: "Chile", correct: false },
+  //       { text: "Bolivia", correct: false },
+  //     ],
+  //   },
+  //   {
+  //     question: "Vilket land är känt för att fira Dagen för de döda, en tradition där man hedrar sina förfäder?",
+  //     answers: [
+  //       { text: "Mexiko", correct: true },
+  //       { text: "Argentina", correct: false },
+  //       { text: "Colombia", correct: false },
+  //     ],
+  //   },
 ];
 
 let currentQuestionIndex = 0;
-let startBtn = document.querySelector("#start-btn");
+let startBtn = document.querySelector(".start-btn");
 let nextBtn = document.querySelector(".next-btn");
 let quizSection = document.querySelector(".quiz-section");
 let resultBtn = document.querySelector(".result-btn");
@@ -33,8 +97,8 @@ darkMode.addEventListener("click", () => {
 });
 
 startBtn.addEventListener("click", () => {
-  document.querySelector("#start-page").style.display = "none";
-  document.querySelector(".quiz-container").style.display = "block";
+  document.querySelector(".start-page").classList.add("hidden");
+  document.querySelector(".quiz-container").classList.remove("hidden");
   showQuestion(currentQuestionIndex);
 });
 
@@ -99,10 +163,10 @@ const showResult = () => {
 
   resultSection.innerHTML = `
   <h2>Ditt resultat</h2>
-<p style="color:${result.color}">
+<p class="result-text ${result.color}">
 Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 </p>
-<p style="color:${result.color}">${result.text}</p>
+<p class="result-text ${result.color}">${result.text}</p>
 `;
 
   [quizSection, nextBtn, resultBtn].forEach((element) => {
@@ -123,16 +187,14 @@ resultBtn.addEventListener("click", () => {
 
 const restartQuiz = () => {
   nextBtn.classList.remove("hidden");
-  resultBtn.classList.remove("hidden");
+  resultBtn.classList.add("hidden");
   exitBtn.classList.add("hidden");
   resultSection.innerHTML = "";
+  document.querySelector(".quiz-container").classList.add("hidden");
+  document.querySelector(".start-page").classList.remove("hidden");
+  quizSection.classList.remove("hidden");
 
   currentQuestionIndex = 0;
   userAnswers = new Array(quizQuestions.length).fill(null);
-
-  document.querySelector(".quiz-container").style.display = "none";
-  quizSection.classList.remove("hidden");
-
-  document.querySelector(".start-page").style.display = "block";
 };
 exitBtn.addEventListener("click", restartQuiz);
