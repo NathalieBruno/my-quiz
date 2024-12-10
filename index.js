@@ -90,6 +90,7 @@ let resultSection = document.querySelector(".result");
 let exitBtn = document.querySelector(".exit-btn");
 let darkMode = document.querySelector("#dark-mode");
 let darkModeToggle = document.querySelector("#dark-mode");
+let playerName = "";
 
 darkMode.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
@@ -97,6 +98,11 @@ darkMode.addEventListener("click", () => {
 });
 
 startBtn.addEventListener("click", () => {
+  playerName = document.querySelector("#player-name").value;
+  if (!playerName.trim()) {
+    alert("Du behöver fylla i ett spelnamn innan vi kan starta igång spelet.");
+    return;
+  }
   document.querySelector(".start-page").classList.add("hidden");
   document.querySelector(".quiz-container").classList.remove("hidden");
   showQuestion(currentQuestionIndex);
@@ -162,7 +168,7 @@ const showResult = () => {
   let result = getQuizResult(correctAnswers);
 
   resultSection.innerHTML = `
-  <h2>Ditt resultat</h2>
+  <h2>${playerName} här kommer ditt resultat:</h2>
 <p class="result-text ${result.color}">
 Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 </p>
@@ -190,6 +196,8 @@ const restartQuiz = () => {
   resultBtn.classList.add("hidden");
   exitBtn.classList.add("hidden");
   resultSection.innerHTML = "";
+  document.querySelector("#player-name").value = "";
+  playerName = "";
   document.querySelector(".quiz-container").classList.add("hidden");
   document.querySelector(".start-page").classList.remove("hidden");
   quizSection.classList.remove("hidden");
