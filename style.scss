@@ -2,8 +2,10 @@ $primary-color: #573d9e;
 $primary-hover-color: #443179;
 $secondary-color: #908e92;
 $secondary-hover-color: #cb730f;
-$tertiary-hover-color: #f8f9fa;
+$tertiary-color: #f8f9fa;
 $tertiary-hover-color: #efe8f3;
+$background-color: #665656;
+$accent-color: #b06868;
 
 * {
   margin: 0;
@@ -14,7 +16,7 @@ body {
   min-height: 100vh;
   background-color: #e3e3e5;
   font-family: poppins, sans-serif;
-  color: #665656;
+  color: $background-color;
   &.dark-mode {
     background-color: #0d0c12;
     color: white;
@@ -66,17 +68,16 @@ body {
   }
 
   .question-counter {
-    color: #b06868;
+    color: $accent-color;
     font-weight: bold;
 
     .dark-mode & {
-      color: #b06868;
+      color: $accent-color;
     }
   }
 
   h1 {
     font-family: "londrina shadow", sans-serif;
-    // font-family: "Bagel Fat One", system-ui;
     font-size: 52px;
     letter-spacing: 5px;
     font-weight: lighter;
@@ -104,16 +105,16 @@ body {
     border: 1px solid #ede9e9;
     background-color: #f5f2f2;
     border-right: none;
-    border-radius: 2px 0 0 2px;
-    width: 270px;
+    border-radius: 20px 0 0 20px;
+    width: 300px;
     outline: none;
     box-shadow: 0 6px 8px rgba(99, 98, 98, 0.2);
-    color: #b06868;
+    color: $accent-color;
     font-weight: bold;
+    font-size: 16px;
 
     &::placeholder {
       color: #8e8e8e;
-      font-size: 14px;
       font-weight: lighter;
     }
   }

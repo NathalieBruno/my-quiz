@@ -81,67 +81,64 @@ const quizQuestions = [
   //   },
 ];
 
+const element = {
+  darkModeBtn: document.querySelector("#dark-mode"),
+  startBtn: document.querySelector(".start-btn"),
+  nextBtn: document.querySelector(".next-btn"),
+  quizSection: document.querySelector(".quiz-section"),
+  resultBtn: document.querySelector(".result-btn"),
+  resultSection: document.querySelector(".result"),
+  exitBtn: document.querySelector(".exit-btn"),
+  playerNameInput: document.querySelector("#player-name"),
+  startPage: document.querySelector(".start-page"),
+  quizContainer: document.querySelector(".quiz-container"),
+  questionCounter: document.querySelector(".question-counter"),
+  questionText: document.querySelector(".question-text"),
+  answerContainer: document.querySelector(".answer-container"),
+};
+
 let currentQuestionIndex = 0;
-let startBtn = document.querySelector(".start-btn");
-let nextBtn = document.querySelector(".next-btn");
-let quizSection = document.querySelector(".quiz-section");
-let resultBtn = document.querySelector(".result-btn");
-let resultSection = document.querySelector(".result");
-let exitBtn = document.querySelector(".exit-btn");
-let darkMode = document.querySelector("#dark-mode");
-let darkModeToggle = document.querySelector("#dark-mode");
 let playerName = "";
+let userAnswers = new Array(quizQuestions.length).fill(null);
 
-darkMode.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  darkModeToggle.textContent = document.body.classList.contains("dark-mode") ? "Light theme 🌞 " : "Dark theme 😎";
-});
-
-startBtn.addEventListener("click", () => {
-  playerName = document.querySelector("#player-name").value;
+element.startBtn.addEventListener("click", () => {
+  playerName = element.playerNameInput.value;
   if (!playerName.trim()) {
     alert("Du behöver fylla i ett spelnamn innan vi kan starta igång spelet.");
     return;
   }
-  document.querySelector(".start-page").classList.add("hidden");
-  document.querySelector(".quiz-container").classList.remove("hidden");
+  element.startPage.classList.add("hidden");
+  element.quizContainer.classList.remove("hidden");
   showQuestion(currentQuestionIndex);
 });
 
-let userAnswers = new Array(quizQuestions.length).fill(null);
-
 const showQuestion = (questionIndex) => {
-  let questionCounter = document.querySelector(".question-counter");
-  questionCounter.textContent = `Fråga ${questionIndex + 1} av ${quizQuestions.length}`;
-
-  let questionText = document.querySelector(".question-text");
-  questionText.textContent = quizQuestions[questionIndex].question;
-
-  let answerContainer = document.querySelector(".answer-container");
-  answerContainer.innerHTML = "";
+  element.questionCounter.textContent = `Fråga ${questionIndex + 1} av ${quizQuestions.length}`;
+  element.questionText.textContent = quizQuestions[questionIndex].question;
+  element.answerContainer.innerHTML = "";
 
   quizQuestions[questionIndex].answers.forEach((answer) => {
     let answerBtn = document.createElement("button");
     answerBtn.classList.add("btn", "answer-btn");
     answerBtn.textContent = answer.text;
     answerBtn.dataset.correct = answer.correct;
-    answerContainer.appendChild(answerBtn);
+    element.answerContainer.appendChild(answerBtn);
   });
 
   let isLastQuestion = questionIndex === quizQuestions.length - 1;
-  nextBtn.classList.toggle("hidden", isLastQuestion);
-  resultBtn.classList.toggle("hidden", !isLastQuestion);
+  element.nextBtn.classList.toggle("hidden", isLastQuestion);
+  element.resultBtn.classList.toggle("hidden", !isLastQuestion);
 };
 
-quizSection.addEventListener("click", (event) => {
+element.quizSection.addEventListener("click", (event) => {
   if (event.target.classList.contains("answer-btn")) {
-    quizSection.querySelectorAll(".answer-btn").forEach((btn) => btn.classList.remove("selected"));
+    element.quizSection.querySelectorAll(".answer-btn").forEach((btn) => btn.classList.remove("selected"));
     event.target.classList.add("selected");
     userAnswers[currentQuestionIndex] = event.target.textContent;
   }
 });
 
-nextBtn.addEventListener("click", () => {
+element.nextBtn.addEventListener("click", () => {
   if (userAnswers[currentQuestionIndex] === null) {
     alert("För att gå vidare behöver du först svara på frågan.");
     return;
@@ -167,7 +164,7 @@ const showResult = () => {
 
   let result = getQuizResult(correctAnswers);
 
-  resultSection.innerHTML = `
+  element.resultSection.innerHTML = `
   <h2>${playerName} här kommer ditt resultat:</h2>
 <p class="result-text ${result.color}">
 Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
@@ -175,15 +172,15 @@ Du fick ${correctAnswers} av ${quizQuestions.length} möjliga rätt svar.
 <p class="result-text ${result.color}">${result.text}</p>
 `;
 
-  [quizSection, nextBtn, resultBtn].forEach((element) => {
-    element.classList.add("hidden");
+  [element.quizSection, element.nextBtn, element.resultBtn].forEach((elements) => {
+    elements.classList.add("hidden");
   });
 
-  resultSection.classList.remove("hidden");
-  exitBtn.classList.remove("hidden");
+  element.resultSection.classList.remove("hidden");
+  element.exitBtn.classList.remove("hidden");
 };
 
-resultBtn.addEventListener("click", () => {
+element.resultBtn.addEventListener("click", () => {
   if (userAnswers[currentQuestionIndex] === null) {
     alert("Du behöver välja ett svar för att kunna se ditt resultat. ");
     return;
@@ -191,18 +188,23 @@ resultBtn.addEventListener("click", () => {
   showResult();
 });
 
+element.darkModeBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  element.darkModeBtn.textContent = document.body.classList.contains("dark-mode") ? "Light theme 🌞 " : "Dark theme 😎";
+});
+
 const restartQuiz = () => {
-  nextBtn.classList.remove("hidden");
-  resultBtn.classList.add("hidden");
-  exitBtn.classList.add("hidden");
-  resultSection.innerHTML = "";
-  document.querySelector("#player-name").value = "";
-  playerName = "";
-  document.querySelector(".quiz-container").classList.add("hidden");
-  document.querySelector(".start-page").classList.remove("hidden");
-  quizSection.classList.remove("hidden");
+  element.nextBtn.classList.remove("hidden");
+  element.resultBtn.classList.add("hidden");
+  element.exitBtn.classList.add("hidden");
+  element.resultSection.innerHTML = "";
+  element.quizContainer.classList.add("hidden");
+  element.startPage.classList.remove("hidden");
+  element.quizSection.classList.remove("hidden");
+  element.playerNameInput.value = "";
 
   currentQuestionIndex = 0;
+  playerName = "";
   userAnswers = new Array(quizQuestions.length).fill(null);
 };
-exitBtn.addEventListener("click", restartQuiz);
+element.exitBtn.addEventListener("click", restartQuiz);
