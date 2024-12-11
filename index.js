@@ -1,18 +1,10 @@
 const quizQuestions = [
   {
-    question: "Vilken är den största staden i Australien, inte räknad som huvudstad?",
+    question: "Vad får du om du beställer en 'Dirty Chai' på ett kafé?",
     answers: [
-      { text: "Sydney", correct: true },
-      { text: "Melbourne", correct: false },
-      { text: "Brisbane", correct: false },
-    ],
-  },
-  {
-    question: "Vad heter den traditionella japanska teceremonin?",
-    answers: [
-      { text: "Sumi-e", correct: false },
-      { text: "Kintsugi", correct: false },
-      { text: "Chanoyu", correct: true },
+      { text: "En Chai latte med dubbel espresso", correct: true },
+      { text: "En americano med kaffesump toppad med kanel", correct: false },
+      { text: "Chai latte och karamellsirap", correct: false },
     ],
   },
   {
@@ -24,11 +16,11 @@ const quizQuestions = [
     ],
   },
   {
-    question: "Vilket land har världens största ö, Grönland?",
+    question: "Vilken ögrupp tillhör Galápagosöarna?",
     answers: [
-      { text: "Danmark", correct: true },
-      { text: "Island", correct: false },
-      { text: "Kanada", correct: false },
+      { text: "Ecuador", correct: true },
+      { text: "Colombia", correct: false },
+      { text: "Venezuela", correct: false },
     ],
   },
   {
@@ -40,11 +32,19 @@ const quizQuestions = [
     ],
   },
   {
-    question: "I vilket land är det vanligt att dricka mate, ett örtte som serveras i en speciell behållare?",
+    question: "Vad heter den traditionella japanska teceremonin?",
     answers: [
-      { text: "Argentina", correct: true },
-      { text: "Brasilien", correct: false },
-      { text: "Chile", correct: false },
+      { text: "Sumi-e", correct: false },
+      { text: "Kintsugi", correct: false },
+      { text: "Chanoyu", correct: true },
+    ],
+  },
+  {
+    question: "Vilken skådespelare spelade huvudrollen som 'Joker' i filmen från 2019?",
+    answers: [
+      { text: "Joaquin Phoenix", correct: true },
+      { text: "Heath Ledger", correct: false },
+      { text: "Jared Leto", correct: false },
     ],
   },
   {
@@ -56,11 +56,11 @@ const quizQuestions = [
     ],
   },
   {
-    question: "Vilket land är känt för att ha de mest unika köket i världen, med mat som kimchi och bibimbap?",
+    question: "Vilken var Disneys första animerade långfilm?",
     answers: [
-      { text: "Japan", correct: false },
-      { text: "Sydkorea", correct: true },
-      { text: "Kina", correct: false },
+      { text: "Snövit och de sju dvärgarna", correct: true },
+      { text: "Bambi", correct: false },
+      { text: "Dumbo", correct: false },
     ],
   },
   {
