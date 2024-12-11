@@ -1,3 +1,4 @@
+// Färgvaribler
 $primary-color: #573d9e;
 $primary-hover-color: #443179;
 $secondary-color: #908e92;
@@ -21,25 +22,25 @@ body {
     background-color: #0d0c12;
     color: white;
   }
-}
 
-.page-header {
-  position: fixed;
-  top: 25px;
-  right: 25px;
-}
+  .page-header {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+  }
 
-.theme-toggle {
-  padding: 12px 18px;
-  font-size: 16px;
-  background-color: #3c3c3c;
-  color: white;
-  border: none;
-  border-radius: 28px;
-  cursor: pointer;
-  .dark-mode & {
-    background-color: white;
-    color: black;
+  .theme-toggle {
+    padding: 12px 18px;
+    font-size: 16px;
+    background-color: #3c3c3c;
+    color: white;
+    border: none;
+    border-radius: 28px;
+    cursor: pointer;
+    .dark-mode & {
+      background-color: white;
+      color: black;
+    }
   }
 }
 
@@ -105,8 +106,8 @@ body {
     border: 1px solid #ede9e9;
     background-color: #f5f2f2;
     border-right: none;
-    border-radius: 20px 0 0 20px;
-    width: 300px;
+    border-radius: 25px 0 0 25px;
+    width: 320px;
     outline: none;
     box-shadow: 0 6px 8px rgba(99, 98, 98, 0.2);
     color: $accent-color;
@@ -139,7 +140,6 @@ body {
   h2 {
     font-family: "Yusei Magic", sans-serif;
     font-size: 22px;
-    letter-spacing: 1px;
     border: none;
     font-weight: lighter;
     margin: 30px 0px;
@@ -179,7 +179,7 @@ body {
     margin-left: -20px;
     padding: 12px 18px;
     font-size: 14px;
-    border-radius: 20px 0px 20px 0px;
+    border-radius: 25px;
   }
   &.start-btn,
   &.exit-btn,

@@ -15,14 +15,14 @@ const quizQuestions = [
       { text: "Chanoyu", correct: true },
     ],
   },
-  //   {
-  //     question: "Vilken planet i vårt solsystem är känd som den röda planeten?",
-  //     answers: [
-  //       { text: "Mars", correct: true },
-  //       { text: "Jupiter", correct: false },
-  //       { text: "Venus", correct: false },
-  //     ],
-  //   },
+  {
+    question: "Vilken planet i vårt solsystem är känd som den röda planeten?",
+    answers: [
+      { text: "Mars", correct: true },
+      { text: "Jupiter", correct: false },
+      { text: "Venus", correct: false },
+    ],
+  },
   //   {
   //     question: "Vilket land har världens största ö, Grönland?",
   //     answers: [
@@ -64,7 +64,7 @@ const quizQuestions = [
   //     ],
   //   },
   //   {
-  //     question: "I vilket land hittar man den Machu Picchu, en världsberömd inka-stad i Anderna?",
+  //     question: "I vilket land hittar man Machu Picchu, en världsberömd inka-stad i Anderna?",
   //     answers: [
   //       { text: "Peru", correct: true },
   //       { text: "Chile", correct: false },
@@ -72,10 +72,10 @@ const quizQuestions = [
   //     ],
   //   },
   //   {
-  //     question: "Vilket land är känt för att fira Dagen för de döda, en tradition där man hedrar sina förfäder?",
+  //     question: "Vilket land är känt för att fira 'Dagen för de döda', en tradition där man hedrar sina förfäder?",
   //     answers: [
   //       { text: "Mexiko", correct: true },
-  //       { text: "Argentina", correct: false },
+  //       { text: "Japan", correct: false },
   //       { text: "Colombia", correct: false },
   //     ],
   //   },
