@@ -23,62 +23,62 @@ const quizQuestions = [
       { text: "Venus", correct: false },
     ],
   },
-  //   {
-  //     question: "Vilket land har världens största ö, Grönland?",
-  //     answers: [
-  //       { text: "Danmark", correct: true },
-  //       { text: "Island", correct: false },
-  //       { text: "Kanada", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "Vilken av dessa dansstilar är förknippad med Brasilien och dansas ofta under karnevalen?",
-  //     answers: [
-  //       { text: "Salsa", correct: false },
-  //       { text: "Samba", correct: true },
-  //       { text: "Bachata", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "I vilket land är det vanligt att dricka mate, ett örtte som serveras i en speciell behållare?",
-  //     answers: [
-  //       { text: "Argentina", correct: true },
-  //       { text: "Brasilien", correct: false },
-  //       { text: "Chile", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "Vilken stad kallas ofta för 'The Big Apple'? 🍎 ",
-  //     answers: [
-  //       { text: "Los Angeles", correct: false },
-  //       { text: "New York", correct: true },
-  //       { text: "Chicago", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "Vilket land är känt för att ha de mest unika köket i världen, med mat som kimchi och bibimbap?",
-  //     answers: [
-  //       { text: "Japan", correct: false },
-  //       { text: "Sydkorea", correct: true },
-  //       { text: "Kina", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "I vilket land hittar man Machu Picchu, en världsberömd inka-stad i Anderna?",
-  //     answers: [
-  //       { text: "Peru", correct: true },
-  //       { text: "Chile", correct: false },
-  //       { text: "Bolivia", correct: false },
-  //     ],
-  //   },
-  //   {
-  //     question: "Vilket land är känt för att fira 'Dagen för de döda', en tradition där man hedrar sina förfäder?",
-  //     answers: [
-  //       { text: "Mexiko", correct: true },
-  //       { text: "Japan", correct: false },
-  //       { text: "Colombia", correct: false },
-  //     ],
-  //   },
+  {
+    question: "Vilket land har världens största ö, Grönland?",
+    answers: [
+      { text: "Danmark", correct: true },
+      { text: "Island", correct: false },
+      { text: "Kanada", correct: false },
+    ],
+  },
+  {
+    question: "Vilken av dessa dansstilar är förknippad med Brasilien och dansas ofta under karnevalen?",
+    answers: [
+      { text: "Salsa", correct: false },
+      { text: "Samba", correct: true },
+      { text: "Bachata", correct: false },
+    ],
+  },
+  {
+    question: "I vilket land är det vanligt att dricka mate, ett örtte som serveras i en speciell behållare?",
+    answers: [
+      { text: "Argentina", correct: true },
+      { text: "Brasilien", correct: false },
+      { text: "Chile", correct: false },
+    ],
+  },
+  {
+    question: "Vilken stad kallas ofta för 'The Big Apple'? 🍎 ",
+    answers: [
+      { text: "Los Angeles", correct: false },
+      { text: "New York", correct: true },
+      { text: "Chicago", correct: false },
+    ],
+  },
+  {
+    question: "Vilket land är känt för att ha de mest unika köket i världen, med mat som kimchi och bibimbap?",
+    answers: [
+      { text: "Japan", correct: false },
+      { text: "Sydkorea", correct: true },
+      { text: "Kina", correct: false },
+    ],
+  },
+  {
+    question: "I vilket land hittar man Machu Picchu, en världsberömd inka-stad i Anderna?",
+    answers: [
+      { text: "Peru", correct: true },
+      { text: "Chile", correct: false },
+      { text: "Bolivia", correct: false },
+    ],
+  },
+  {
+    question: "Vilket land är känt för att fira 'Dagen för de döda', en tradition där man hedrar sina förfäder?",
+    answers: [
+      { text: "Mexiko", correct: true },
+      { text: "Japan", correct: false },
+      { text: "Colombia", correct: false },
+    ],
+  },
 ];
 
 const element = {
