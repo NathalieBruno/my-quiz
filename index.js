@@ -190,7 +190,7 @@ element.resultBtn.addEventListener("click", () => {
 
 element.darkModeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  element.darkModeBtn.textContent = document.body.classList.contains("dark-mode") ? "Light theme 🌞 " : "Dark theme 😎";
+  element.darkModeBtn.textContent = document.body.classList.contains("dark-mode") ? "Ljust läge 🌞 " : "Mörkt läge 😎";
 });
 
 const restartQuiz = () => {
